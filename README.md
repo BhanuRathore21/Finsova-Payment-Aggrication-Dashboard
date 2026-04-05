@@ -80,7 +80,7 @@ Direct bank integration includes **Union Bank** in the current business flow des
 
 ## API Architecture Summary
 
-The Postman collection shows a token-based API model where an access token is generated first and then used for protected operations. It also shows payout callbacks, order creation, balance fetch, and transaction-status verification. fileciteturn2file0
+The Postman collection shows a token-based API model where an access token is generated first and then used for protected operations. It also shows payout callbacks, order creation, balance fetch, and transaction-status verification. ''
 
 ### Main API Capabilities Seen in Collection
 - Create access token
@@ -95,7 +95,7 @@ The Postman collection shows a token-based API model where an access token is ge
 1. Generate access token
 2. Pass bearer token in `Authorization` header
 3. Use required client headers / secret headers configured per integration
-4. Ensure **IP and webhook URLs are whitelisted** for pay-in and payout communication, as stated in the API collection description. fileciteturn2file0
+4. Ensure **IP and webhook URLs are whitelisted** for pay-in and payout communication, as stated in the API collection description. ''
 
 ## Example API Flow
 
@@ -131,7 +131,7 @@ curl --request POST '<BASE_URL>/api/v1/createtoken' \
 }
 ```
 
-This access-token flow is documented in the uploaded Postman collection. fileciteturn2file0
+This access-token flow is documented in the uploaded Postman collection.
 
 ### 2. Create Wallet Load / Payment Order
 
@@ -182,7 +182,7 @@ Content-Type: application/json
 }
 ```
 
-The payment-order endpoint and response pattern are shown in the uploaded Postman collection. fileciteturn2file0
+The payment-order endpoint and response pattern are shown in the uploaded Postman collection.
 
 ### 3. Create Payout
 
@@ -268,7 +268,7 @@ Content-Type: application/json
 }
 ```
 
-These payout request/response patterns are taken from the uploaded Postman collection. fileciteturn2file0
+These payout request/response patterns are taken from the uploaded Postman collection.
 
 ### 4. Check Transaction Status
 
@@ -301,7 +301,7 @@ POST /api/v1/payouts/status
 }
 ```
 
-The status API and its sample responses are present in the uploaded Postman collection. fileciteturn2file0
+The status API and its sample responses are present in the uploaded Postman collection.
 
 ### 5. Fetch Balance
 
@@ -311,7 +311,7 @@ POST /api/v1/fetchbalance
 ```
 
 **Purpose**
-Used to retrieve available balance for payout or transaction processing operations, as shown in the Postman collection. fileciteturn2file0
+Used to retrieve available balance for payout or transaction processing operations, as shown in the Postman collection.
 
 ## Callback / Webhook Model
 
@@ -326,7 +326,7 @@ The Postman collection includes an example payout callback payload with:
 - amount
 - timestamp
 
-This indicates the platform supports asynchronous status updates from integrated partners and banks. fileciteturn2file0
+This indicates the platform supports asynchronous status updates from integrated partners and banks.
 
 **Sample Callback Structure**
 ```json
