@@ -17,7 +17,7 @@ The platform also supports:
 - **Payout execution via API or dashboard**
 - **Transaction visibility, reconciliation, and status tracking**
 
-This README is based on the project context provided by the owner and the Postman payout/API collection, which shows token generation, payout creation, order creation, balance fetch, and payout status flows. fileciteturn2file0
+This README is based on the project context provided by the owner and the Postman payout/API collection, which shows token generation, payout creation, order creation, balance fetch, and payout status flows.
 
 ## Core Business Flow
 
