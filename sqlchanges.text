@@ -1,0 +1,21 @@
+ALTER TABLE `payout_transactions` ADD `platform_fee` DECIMAL(20,2) NOT NULL DEFAULT '0.00' AFTER `gst_amount`;
+// ALTER TABLE `user_services` CHANGE `active_payout_api` `active_payout_api` ENUM("None","Bulkpe") CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'None', CHANGE `active_payin_api` `active_payin_api` ENUM("None","Bulkpe") CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'None';
+ALTER TABLE `user_services` CHANGE `pslab_percentage` `pflat_charges` DECIMAL(15,2) NOT NULL DEFAULT '7.00';
+ALTER TABLE `user_services` ADD `pflat_charges_2` DECIMAL(20,2) NOT NULL DEFAULT '7.00' AFTER `pflat_charges`;
+ALTER TABLE `user_services` ADD `wallet_type` ENUM("payout_wallet","virtual_wallet") NOT NULL DEFAULT 'virtual_wallet' AFTER `ptransaction`;
+ALTER TABLE `user_services`
+  DROP `ftransaction`,
+  DROP `ptransaction`;
+  ALTER TABLE `user_services` CHANGE `virtual_charges` `virtual_charges` DECIMAL(20,2) NOT NULL DEFAULT '1.00';
+
+
+
+
+  ALTER TABLE `payout_transactions` ADD `bene_email` VARCHAR(255) NULL DEFAULT NULL AFTER `bene_name`, ADD `bene_mobile` VARCHAR(255) NULL DEFAULT NULL AFTER `bene_email`;
+
+
+
+  ALTER TABLE `user_api_keys` ADD `bulkpe_auth_token` TEXT NULL DEFAULT NULL AFTER `updated_at`, ADD `razorpay_account_number` VARCHAR(255) NULL DEFAULT NULL AFTER `bulkpe_auth_token`, ADD `razorpay_api_key` TEXT NULL DEFAULT NULL AFTER `razorpay_account_number`, ADD `razorpay_secret_key` TEXT NULL DEFAULT NULL AFTER `razorpay_api_key`, ADD `paywize_api_key` TEXT NULL DEFAULT NULL AFTER `razorpay_secret_key`, ADD `paywize_secret_key` TEXT NOT NULL AFTER `paywize_api_key`, ADD `buckbox_merchant_id` VARCHAR(255) NULL DEFAULT NULL AFTER `paywize_secret_key`, ADD `buckbox_merchant_name` VARCHAR(255) NULL DEFAULT NULL AFTER `buckbox_merchant_id`, ADD `buckbox_merchant_email` VARCHAR(255) NULL DEFAULT NULL AFTER `buckbox_merchant_name`, ADD `buckbox_api_key` TEXT NULL DEFAULT NULL AFTER `buckbox_merchant_email`, ADD `buckbox_secret_key` TEXT NULL DEFAULT NULL AFTER `buckbox_api_key`, ADD `buckbox_eny_key` TEXT NULL DEFAULT NULL AFTER `buckbox_secret_key`;
+  ALTER TABLE `payout_transactions` ADD `basic_details` JSON NULL DEFAULT NULL AFTER `response_message`;
+  ALTER TABLE `payin_transactions` ADD `basic_details` JSON NULL DEFAULT NULL AFTER `response_message`;
+  ALTER TABLE `users` ADD `created_by` INT NULL DEFAULT NULL AFTER `active`;
